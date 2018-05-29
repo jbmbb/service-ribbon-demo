@@ -1,0 +1,16 @@
+server:
+  port: 8180 
+
+spring:
+  application:
+    name: service-hello2
+  
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8888/eureka/    #注册 中心已经开启认证
+  instance:
+    prefer-ip-address: true
+    instance-id: ${spring.application.name}:${spring.application.instance-id:${server.port}}
+      
+    
